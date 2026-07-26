@@ -36,7 +36,10 @@
 
         <div class="form-group">
           <label for="instruction">Instructions:</label>
-          <textarea id="instruction"></textarea>
+          <textarea
+            id="instruction"
+            placeholder="Enter each instruction on a new line"
+          ></textarea>
           <span class="error" id="instructionError"></span>
         </div>
 
@@ -50,10 +53,10 @@
 
             <input type="number" placeholder="Quantity" min="0" />
 
-            <button type="button">Remove</button>
+            <button type="button" class="remove-btn">Remove</button>
           </div>
 
-          <button type="button">+ Add Ingredient</button>
+          <button type="button" id="add-btn">+ Add Ingredient</button>
         </div>
 
         <div class="image-section">
@@ -61,7 +64,7 @@
           <input type="file" id="recipeImage" accept="image/*" />
         </div>
 
-        <button type="submit">Save Recipe</button>
+        <button type="submit" id="save-btn">Save Recipe</button>
       </form>
     </main>
     <footer class="footer">
