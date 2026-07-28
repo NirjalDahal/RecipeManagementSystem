@@ -133,9 +133,11 @@ nav a:hover {
 
 .recipe-card img {
   width: 100%;
-  height: 200px;
-  object-fit: cover;
+  height: 350px;
+  object-fit: cover ;
+  border-radius: 10px;
 }
+
 .recipe-card-content {
   padding: 20px;
 }
@@ -160,6 +162,14 @@ nav a:hover {
 
 .recipe-card-content a:hover {
   text-decoration: underline;
+}
+
+.favorite-btn {
+  color: red;
+  background: none;
+  border: none;
+  font-size: 30px;
+  cursor: pointer;
 }
 
 .footer {
