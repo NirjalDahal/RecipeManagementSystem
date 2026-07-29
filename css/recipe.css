@@ -204,6 +204,12 @@ nav a:hover {
   gap: 25px;
 }
 
+#flex-group{
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+}
+
 .form-group {
   display: flex;
   flex-direction: column;
