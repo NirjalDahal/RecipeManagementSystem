@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ingredients</title>
+    <link rel="stylesheet" href="css/ingredients.css" />
+  </head>
+  <body>
+    <header class="navbar">
+      <a href="recipe.html" class="logo">🍳 Recipe Manager</a>
+
+      <nav>
+        <a href="recipe.html">Recipes</a>
+        <a href="ingredients.html">Ingredients</a>
+
+        <a href="login.html" class="logout-btn">Logout</a>
+      </nav>
+    </header>
+
+    <main class="ingredients-page">
+      <div class="ingredient-header">
+        <h1>All Ingredients</h1>
+
+        <a href="ingredients-form.html" class="add-ingredient-btn"
+          >+ Add Ingredient</a
+        >
+      </div>
+
+      <div class="search-section">
+        <input
+          type="text"
+          placeholder="Search ingredient..."
+          class="ingredint-search"
+        />
+
+        <button class="search">Search</button>
+      </div>
+
+      <section class="ingredient-grid">
+        <div class="ingredient-card">
+          <img src="" alt="ingridient1" />
+
+          <div class="ingredient-card-content">
+            <h2>Chicken</h2>
+
+            <p>⚖️Grams</p>
+
+            <a href="ingredients-form.html" class="edit-ingredient-btn"
+              >Edit Ingredient</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>&copy; 2026 Recipe Manager. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
