@@ -30,14 +30,43 @@
       <div class="search-section">
         <input type="text" placeholder="Search recipe..." id="search-recipe" />
 
-        <select id="difficulty-filter">
-          <option value="">All Difficulty Levels</option>
-          <option value="Easy">Easy</option>
-          <option value="Medium">Medium</option>
-          <option value="Hard">Hard</option>
-        </select>
-
         <button class="search">Search</button>
+      </div>
+
+      <div class="filter-section">
+        <div class="filter-group">
+          <label for="category-filter">Category</label>
+          <select id="category-filter">
+            <option value="">All Categories</option>
+            <option value="Breakfast">Breakfast</option>
+            <option value="Lunch">Lunch</option>
+            <option value="Dinner">Dinner</option>
+            <option value="Snack">Snack</option>
+            <option value="Dessert">Dessert</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label for="cuisine-filter">Cuisine</label>
+          <select id="cuisine-filter">
+            <option value="">All Cuisines</option>
+            <option value="Asian">Asian</option>
+            <option value="Indian">Indian</option>
+            <option value="Italian">Italian</option>
+            <option value="Chinese">Chinese</option>
+            <option value="Mexican">Mexican</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label for="difficulty-filter">Difficulty</label>
+          <select id="difficulty-filter">
+            <option value="">All Difficulty Levels</option>
+            <option value="Easy">Easy</option>
+            <option value="Medium">Medium</option>
+            <option value="Hard">Hard</option>
+          </select>
+        </div>
       </div>
 
       <section class="recipe-grid">
@@ -88,5 +117,7 @@
     <footer class="footer">
       <p>&copy; 2026 Recipe Manager. All rights reserved.</p>
     </footer>
+
+    <script src="js/recipe.js"></script>
   </body>
 </html>

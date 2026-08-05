@@ -37,18 +37,32 @@
           <div class="category">
             <label for="category">Category:</label>
             <input type="text" id="category" />
+            <span class="error" id="categoryError"></span>
           </div>
 
-          <div class="cusine">
+          <div class="cuisine">
             <label for="cuisine">Cuisine:</label>
             <input type="text" id="cuisine" />
+            <span class="error" id="cuisineError"></span>
+          </div>
+
+          <div class="difficulty">
+            <label for="difficulty">Difficulty:</label>
+
+            <select id="difficulty">
+              <option value="">Select Difficulty</option>
+              <option value="Easy">Easy</option>
+              <option value="Medium">Medium</option>
+              <option value="Hard">Hard</option>
+            </select>
           </div>
 
           <div class="time">
             <label for="time">Prep Time:</label>
             <input type="number" id="prep-time" />
+            <span class="error" id="prep-timeError"></span>
           </div>
-        </div>  
+        </div>
 
         <div class="form-group">
           <label for="instruction">Instructions:</label>
@@ -88,5 +102,7 @@
     <footer class="footer">
       <p>&copy; 2026 Recipe Manager. All rights reserved.</p>
     </footer>
+
+    <script src="js/recipe-form.js"></script>
   </body>
 </html>
