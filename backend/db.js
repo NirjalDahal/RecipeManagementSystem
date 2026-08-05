@@ -15,6 +15,24 @@ db.exec(`
   )
 `);
 
+db.exec(`
+  CREATE TABLE recipes (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id INTEGER NOT NULL,
+    recipe_name TEXT NOT NULL,
+    recipe_description TEXT NOT NULL,
+    category TEXT NOT NULL,
+    cuisine TEXT NOT NULL,
+    difficulty TEXT NOT NULL,
+    prep_time INTEGER NOT NULL,
+    instructions TEXT NOT NULL,
+    image TEXT,
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+
+    FOREIGN KEY (user_id) REFERENCES users(id)
+);
+  `);
+
 console.log(`✅ Database connected successfully (${dbFile})`);
 
 module.exports = db;
