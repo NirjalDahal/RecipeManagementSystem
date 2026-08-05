@@ -29,6 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (data.success) {
         showMessage(data.message, "success");
+        window.location.href = "recipe.html";
       } else {
         showMessage(data.message, "error");
       }
