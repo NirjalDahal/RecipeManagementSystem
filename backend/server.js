@@ -4,7 +4,6 @@ const path = require("path");
 const express = require("express");
 const bcrypt = require("bcryptjs");
 const db = require("./db");
-const { diff } = require("util");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -22,7 +21,7 @@ app.post("/api/login", (req, res) => {
 
   if (!email || !password) {
     return res.status(400).json({
-      success: "false",
+      success: false,
       message: "Email and password are required",
     });
   }
@@ -119,7 +118,7 @@ app.post("/api/recipes", (req, res) => {
   try {
     const result = db
       .prepare(
-        `INSERT INTO recipes(user_id, recipeName, recipeDescription, category, cuisine, difficulty, prep_time, instruction )
+        `INSERT INTO recipes(user_id, recipe_name, recipe_description, category, cuisine, difficulty, prep_time, instructions )
       VALUES (?, ?, ?, ?, ?, ?, ?, ?)`,
       )
       .run(
@@ -147,7 +146,67 @@ app.post("/api/recipes", (req, res) => {
   }
 });
 
+app.post("/api/ingredients", (req, res) => {
+  const ingredient_name = req.body.ingredient_name;
+  const default_unit = req.body.default_unit;
 
+  if (!ingredient_name || !default_unit) {
+    return res.status(400).json({
+      success: false,
+      message: "Ingredient name and default unit is required",
+    });
+  }
+
+  try {
+    const existing = db
+      .prepare(
+        "SELECT ingredient_id FROM ingredients WHERE ingredient_name = ?",
+      )
+      .get(ingredient_name);
+
+    if (existing) {
+      return res.status(409).json({
+        success: false,
+        message: "Ingredient already exists",
+      });
+    }
+    const result = db
+      .prepare(
+        `INSERT INTO ingredients(ingredient_name, default_unit) VALUES
+      (?, ?)`,
+      )
+      .run(ingredient_name, default_unit);
+
+    return res.status(201).json({
+      success: true,
+      message: "Ingredient added successfully",
+    });
+  } catch (e) {
+    console.log("Error while inserting ingredients data", e);
+    return res.status(500).json({
+      success: false,
+      message: "Something went wrong",
+    });
+  }
+});
+
+app.get("/api/ingredients", (req, res) => {
+  try {
+    const ingredients = db
+      .prepare(
+        "SELECT ingredient_id, ingredient_name, default_unit FROM ingredients",
+      )
+      .all();
+
+    res.json(ingredients);
+  } catch (e) {
+    console.log(e);
+    res.status(500).json({
+      success: false,
+      message: "Failed to load ingredients",
+    });
+  }
+});
 
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);

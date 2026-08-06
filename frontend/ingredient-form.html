@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ingredients</title>
+    <link rel="stylesheet" href="css/ingredient-form.css" />
+  </head>
+  <body>
+    <header class="navbar">
+      <a href="recipe.html" class="logo">🍳 Recipe Manager</a>
+
+      <nav>
+        <a href="recipe.html">Recipes</a>
+        <a href="ingredients.html">Ingredients</a>
+        <a href="login.html" class="logout-btn">Logout</a>
+      </nav>
+    </header>
+
+    <main class="container">
+      <h1>Ingredients</h1>
+
+      <form id="ingredientForm">
+        <div class="form-group">
+          <label for="ingredientName">Ingredient Name</label>
+          <input type="text" id="ingredientName" />
+          <span class="error" id="ingredientNameError"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="unit">Default Unit</label>
+
+          <select id="unit">
+            <option value="">Select Unit</option>
+            <option>g</option>
+            <option>kg</option>
+            <option>ml</option>
+            <option>L</option>
+            <option>pcs</option>
+            <option>tbsp</option>
+            <option>tsp</option>
+            <option>cup</option>
+          </select>
+          <span class="error" id="unitError"></span>
+        </div>
+
+        <button type="submit" id="addIngredientBtn">Add Ingredient</button>
+      </form>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Ingredient</th>
+            <th>Unit</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+
+        <tbody id="ingredientTable"></tbody>
+      </table>
+    </main>
+
+    <footer class="footer">©2026 Recipe Manager. All rights reserved.</footer>
+
+    <script src="js/ingredient-form.js"></script>
+  </body>
+</html>

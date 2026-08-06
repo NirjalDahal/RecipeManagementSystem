@@ -22,7 +22,7 @@
       <div class="ingredient-header">
         <h1>All Ingredients</h1>
 
-        <a href="ingredients-form.html" class="add-ingredient-btn"
+        <a href="ingredient-form.html" class="add-ingredient-btn"
           >+ Add Ingredient</a
         >
       </div>
@@ -37,25 +37,25 @@
         <button class="search">Search</button>
       </div>
 
-      <section class="ingredient-grid">
-        <div class="ingredient-card">
-          <img src="" alt="ingridient1" />
+      <section class="ingredient-table-section">
+        <table class="ingredient-table">
+          <thead>
+            <tr>
+              <th>Ingredient</th>
+              <th>Default Unit</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
 
-          <div class="ingredient-card-content">
-            <h2>Chicken</h2>
-
-            <p>⚖️Grams</p>
-
-            <a href="ingredients-form.html" class="edit-ingredient-btn"
-              >Edit Ingredient</a
-            >
-          </div>
-        </div>
+          <tbody id="ingredientTableBody"></tbody>
+        </table>
       </section>
     </main>
 
     <footer class="footer">
       <p>&copy; 2026 Recipe Manager. All rights reserved.</p>
     </footer>
+
+    <script src="js/ingredients.js"></script>
   </body>
 </html>

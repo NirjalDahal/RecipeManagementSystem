@@ -116,53 +116,64 @@ nav a:hover {
   background-color: #d35400;
 }
 
-.ingredient-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 25px;
+.ingredient-table-section {
+  margin-top: 20px;
 }
 
-.ingredient-card {
+.ingredient-table {
+  width: 100%;
+  border-collapse: collapse;
   background-color: white;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
 }
 
-.ingredient-card img {
-  width: 100%;
-  height: 350px;
-  object-fit: cover;
-  border-radius: 10px;
+.ingredient-table th {
+  background-color: #e67e22;
+  color: white;
+  text-align: left;
+  padding: 15px;
+  font-size: 16px;
 }
 
-.ingredient-card-content {
-  padding: 20px;
+.ingredient-table td {
+  padding: 15px;
+  border-bottom: 1px solid #ddd;
+  font-size: 15px;
 }
 
-.ingredient-card-content h2 {
-  margin-bottom: 10px;
-  font-size: 22px;
+.ingredient-table tbody tr:hover {
+  background-color: #f9f9f9;
 }
 
-.ingredient-card-content p {
-  margin-bottom: 8px;
-  color: #666;
+.edit-ingredient-btn,
+.delete-ingredient-btn {
+  display: inline-block;
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 14px;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
 }
 
 .edit-ingredient-btn {
-  margin-top: 10px;
-  border: 1px solid;
-  display: inline-block;
-  text-decoration: none;
-  background-color: #e67e22;
-  color: white;
-  border-radius: 5px;
-  padding: 12px 20px;
+  background-color: #28a745;
+  margin-right: 8px;
 }
 
 .edit-ingredient-btn:hover {
-  background-color: #d35400;
+  background-color: #218838;
+}
+
+.delete-ingredient-btn {
+  background-color: #dc3545;
+}
+
+.delete-ingredient-btn:hover {
+  background-color: #bb2d3b;
 }
 .footer {
   margin-top: auto;

@@ -5,7 +5,7 @@ const Database = require("better-sqlite3");
 const dbFile = process.env.DB_FILE || "database.db";
 const db = new Database(path.join(__dirname, dbFile));
 
-db.exec(`
+await db.execute(`
   CREATE TABLE IF NOT EXISTS users (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     name TEXT NOT NULL,
@@ -15,8 +15,8 @@ db.exec(`
   )
 `);
 
-db.exec(`
-  CREATE TABLE recipes (
+await db.execute(`
+  CREATE TABLE IF NOT EXISTS recipes (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     user_id INTEGER NOT NULL,
     recipe_name TEXT NOT NULL,
@@ -31,7 +31,15 @@ db.exec(`
 
     FOREIGN KEY (user_id) REFERENCES users(id)
 );
-  `);
+`);
+
+await db.execute(`
+  CREATE TABLE IF NOT EXISTS ingredients(
+    ingredient_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    ingredient_name VARCHAR(100) NOT NULL UNIQUE,
+    default_unit VARCHAR(20) NOT NULL
+  )
+`);
 
 console.log(`✅ Database connected successfully (${dbFile})`);
 
